@@ -1,9 +1,11 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 const DATA_PATH = path.join(process.cwd(), 'public', 'products.json');
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
     const data = await fs.readFile(DATA_PATH, 'utf8');
     return Response.json(JSON.parse(data));

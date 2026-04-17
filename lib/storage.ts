@@ -34,8 +34,22 @@ export interface AppState {
 let cache: AppState | null = null;
 
 async function fetchState(): Promise<AppState> {
-  const res = await fetch('/api/storage');
-  return res.json();
+  const ts = Date.now();
+  const res = await fetch(`/api/storage?t=${ts}`, { cache: 'no-store' });
+  const data = await res.json();
+  
+  if (!data.overrides) {
+    data.overrides = { prices: {}, stocks: {}, spiffStates: {}, deletedIds: [] };
+  } else {
+    if (!data.overrides.prices) data.overrides.prices = {};
+    if (!data.overrides.stocks) data.overrides.stocks = {};
+    if (!data.overrides.spiffStates) data.overrides.spiffStates = {};
+    if (!data.overrides.deletedIds) data.overrides.deletedIds = [];
+  }
+  if (!data.manualProducts) data.manualProducts = [];
+  if (!data.settings) data.settings = { storeName: 'Gebze Teknosa' };
+
+  return data;
 }
 
 async function saveState(state: AppState) {
@@ -189,7 +203,7 @@ export function getMergedProducts(sortMode: SortMode = 'price'): StoredProduct[]
     ...p,
     manualPrice: manualPrices[p.id],
     stock: stocks[p.id] ?? 0,
-    spiffActive: spiffStates[p.id] ?? false,
+    spiffActive: spiffStates?.[p.id] ?? false,
   }));
 
   // Sıralama
