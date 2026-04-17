@@ -95,9 +95,9 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
                 <h2 className="text-xs font-black text-[#38bdf8] uppercase tracking-[0.2em]">
                   {product.modelCode}
                 </h2>
-                {product.spiffActive && product.spiff !== '0 TL' && (
+                {product.spiffActive && (
                   <span className="px-2 py-0.5 rounded-full bg-[#c084fc]/20 border border-[#c084fc]/30 text-[#c084fc] text-[9px] font-black uppercase tracking-widest animate-pulse">
-                    {product.spiff && product.spiff !== '' ? product.spiff : 'SPIFF'}
+                    {product.spiff && product.spiff !== '0 TL' ? product.spiff : 'SPIFF'}
                   </span>
                 )}
               </div>
