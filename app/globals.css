@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ── Soft dark theme tokens ──────────────────────────────────────────────── */
 :root {
   --bg-base: #0f172a;
