@@ -166,7 +166,7 @@ export default function AdminPage() {
                 <input
                   type="text"
                   placeholder="1.000 TL"
-                  className="w-full bg-[#0f172a] border border-[#334155] rounded-2xl px-4 py-3 text-sm text-white focus:border-[#38bdf8]/50 outline-none"
+                  className="w-full bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] rounded-2xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-[#38bdf8]/50 outline-none"
                   id="new-spiff"
                 />
               </div>
@@ -177,7 +177,7 @@ export default function AdminPage() {
               <input
                 type="text"
                 placeholder="https://..."
-                className="w-full bg-[#0f172a] border border-[#334155] rounded-2xl px-4 py-3 text-sm text-white focus:border-[#38bdf8]/50 outline-none"
+                className="w-full bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] rounded-2xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-[#38bdf8]/50 outline-none"
                 id="new-image"
               />
             </div>
