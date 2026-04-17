@@ -53,11 +53,20 @@ async function fetchState(): Promise<AppState> {
 }
 
 async function saveState(state: AppState) {
-  await fetch('/api/storage', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(state),
-  });
+  try {
+    const res = await fetch('/api/storage', {
+      method: 'POST',
+      cache: 'no-store',
+      keepalive: true,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(state),
+    });
+    if (!res.ok) {
+      console.error('SAVE_STATE_ERR: Server returned', res.status);
+    }
+  } catch (err) {
+    console.error('SAVE_STATE_ERR_NETWORK:', err);
+  }
 }
 
 export async function initStorage(): Promise<AppState> {

@@ -19,7 +19,8 @@ export async function POST(req: Request) {
     const body = await req.json();
     await fs.writeFile(DATA_PATH, JSON.stringify(body, null, 2), 'utf8');
     return Response.json({ success: true });
-  } catch (err) {
-    return Response.json({ error: 'Failed to write data' }, { status: 500 });
+  } catch (err: any) {
+    console.error('API_STORAGE_POST_ERR:', err);
+    return Response.json({ error: String(err) }, { status: 500 });
   }
 }
