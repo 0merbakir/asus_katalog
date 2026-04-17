@@ -55,23 +55,23 @@ export default function HomePage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-dvh bg-[#0f172a] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500" />
+      <div className="min-h-dvh bg-slate-50 dark:bg-[#0f172a] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#38bdf8]" />
       </div>
     );
   }
 
   return (
     <ToastProvider>
-      <main className="min-h-dvh max-w-lg mx-auto bg-[#0f172a] text-slate-200 antialiased pb-20">
+      <main className="min-h-dvh max-w-lg mx-auto bg-slate-50 dark:bg-[#0f172a] text-slate-900 dark:text-slate-200 antialiased pb-20">
         {/* ── Minimal Header ─────────────────────────────────────────── */}
-        <header className="sticky top-0 z-30 pt-safe bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800/60 px-5 py-4 flex items-center justify-between">
+        <header className="sticky top-0 z-30 pt-safe bg-slate-50/95 dark:bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/60 px-5 py-4 flex items-center justify-between">
           <div className="flex flex-col">
-            <h1 className="text-lg font-black tracking-tight text-white glow-blue leading-tight">
+            <h1 className="text-lg font-black tracking-tight text-slate-900 dark:text-white glow-blue leading-tight">
               {storeName}
             </h1>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-800/40 px-2 py-0.5 rounded-full border border-slate-700/50">
+              <span className="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest bg-slate-200 dark:bg-slate-800/40 px-2 py-0.5 rounded-full border border-slate-300 dark:border-slate-700/50">
                 {products.length} Ürün
               </span>
               <span className="text-[10px] font-bold text-[#38bdf8] uppercase tracking-widest bg-[#38bdf8]/10 px-2 py-0.5 rounded-full border border-[#38bdf8]/20">
@@ -86,7 +86,7 @@ export default function HomePage() {
               className={`p-2.5 rounded-xl border transition-all active:scale-95 flex items-center gap-2 ${
                 sortMode === 'model'
                   ? 'bg-blue-500/20 border-blue-500/50 text-blue-400'
-                  : 'bg-slate-800/40 border-slate-700/50 text-slate-400 hover:text-white'
+                  : 'bg-slate-200 dark:bg-slate-800/40 border-slate-300 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
               title={sortMode === 'price' ? 'Fiyata Göre' : 'Modele Göre'}
             >
@@ -98,14 +98,14 @@ export default function HomePage() {
 
             <button
               onClick={() => setIsInfoOpen(true)}
-              className="p-2.5 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-400 hover:text-white transition-all active:scale-95"
+              className="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800/40 border border-slate-300 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all active:scale-95"
               aria-label="Bilgi"
             >
               <Info size={20} />
             </button>
             <Link
               href="/admin"
-              className="p-2.5 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-400 hover:text-[#38bdf8] transition-all active:scale-95"
+              className="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800/40 border border-slate-300 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 hover:text-[#38bdf8] transition-all active:scale-95"
               aria-label="Ayarlar"
             >
               <Settings size={20} />

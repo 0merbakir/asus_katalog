@@ -79,7 +79,7 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
 
       {/* Detail Panel — Bottom Sheet */}
       <div
-        className={`fixed bottom-0 left-0 right-0 z-50 bg-[#0f172a] border-t border-[#334155] rounded-t-3xl max-w-lg mx-auto transition-transform duration-300 ease-out overflow-y-auto max-h-[90dvh] ${
+        className={`fixed bottom-0 left-0 right-0 z-50 bg-slate-50 dark:bg-[#0f172a] border-t border-slate-200 dark:border-[#334155] rounded-t-3xl max-w-lg mx-auto transition-transform duration-300 ease-out overflow-y-auto max-h-[90dvh] ${
           isOpen ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
@@ -101,7 +101,7 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
                   </span>
                 )}
               </div>
-              <h1 className="text-xl font-bold text-white leading-tight">
+              <h1 className="text-xl font-bold text-slate-900 dark:text-white leading-tight">
                 {product.name}
               </h1>
             </div>
@@ -114,7 +114,7 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
           </div>
 
           {/* Image Slider */}
-          <div className="relative aspect-video bg-[#172033] rounded-2xl overflow-hidden shadow-inner">
+          <div className="relative aspect-video bg-slate-100 dark:bg-[#172033] rounded-2xl overflow-hidden shadow-inner">
             {images.length > 0 ? (
               <>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -138,7 +138,7 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
                 )}
               </>
             ) : (
-              <div className="flex flex-col items-center justify-center h-full text-slate-700">
+              <div className="flex flex-col items-center justify-center h-full text-slate-400 dark:text-slate-700">
                 <Tag size={48} />
                 <span className="text-xs mt-2 uppercase font-bold tracking-widest">Görsel Yok</span>
               </div>
@@ -147,9 +147,9 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
 
           {/* Details & Features */}
           {product.features && (
-            <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-4 flex gap-3">
+            <div className="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-4 flex gap-3 shadow-none">
               <Info size={18} className="text-[#38bdf8] flex-shrink-0" />
-              <p className="text-sm text-slate-300/90 leading-relaxed italic">
+              <p className="text-sm text-slate-600 dark:text-slate-300/90 leading-relaxed italic">
                 {product.features}
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
             {/* Price Editor */}
             <div className="space-y-2 col-span-2">
               <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Fiyat Yönetimi</label>
-              <div className="bg-[#172033] border border-[#334155] rounded-2xl p-4">
+              <div className="bg-white dark:bg-[#172033] border border-slate-200 dark:border-[#334155] rounded-2xl p-4 shadow-sm dark:shadow-none">
                 {editingPrice ? (
                   <div className="flex gap-2">
                     <input
@@ -170,7 +170,7 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
                       onChange={(e) => setPriceInput(e.target.value)}
                       onBlur={commitPrice}
                       onKeyDown={(e) => e.key === 'Enter' && commitPrice()}
-                      className="flex-1 bg-slate-900 border border-[#38bdf8] rounded-xl px-4 py-2 text-[#38bdf8] font-bold text-lg focus:outline-none"
+                      className="flex-1 bg-slate-50 dark:bg-slate-900 border border-[#38bdf8] rounded-xl px-4 py-2 text-[#38bdf8] font-bold text-lg focus:outline-none"
                       autoFocus
                     />
                   </div>
@@ -191,14 +191,14 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
             {/* Stock Manager */}
             <div className="space-y-2 flex-1">
               <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Stok Durumu</label>
-              <div className="flex items-center justify-between bg-[#172033] border border-[#334155] rounded-2xl p-1 shrink-0">
+              <div className="flex items-center justify-between bg-white dark:bg-[#172033] border border-slate-200 dark:border-[#334155] rounded-2xl p-1 shrink-0 shadow-sm dark:shadow-none">
                 <button
                   onClick={() => changeStock(-1)}
                   className="w-10 h-10 flex items-center justify-center text-slate-400 active:scale-90 transition-transform"
                 >
                   <Minus size={20} />
                 </button>
-                <div className="text-lg font-black text-white px-2">
+                <div className="text-lg font-black text-slate-900 dark:text-white px-2">
                   {product.stock}
                 </div>
                 <button
@@ -222,7 +222,7 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
                 className={`flex items-center justify-between w-full h-12 px-4 rounded-2xl border transition-all active:scale-95 ${
                   product.spiffActive 
                     ? 'bg-[#c084fc]/10 border-[#c084fc]/40 text-[#c084fc]' 
-                    : 'bg-slate-800/40 border-slate-700 text-slate-500'
+                    : 'bg-slate-100 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700 text-slate-500'
                 }`}
               >
                 <span className="text-xs font-bold uppercase tracking-wider">

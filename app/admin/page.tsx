@@ -2,15 +2,22 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, Settings, Store, RotateCcw, Plus, Tag, Package, Info } from 'lucide-react';
+import { ArrowLeft, Settings, Store, RotateCcw, Plus, Tag, Package, Info, Sun, Moon } from 'lucide-react';
 import { setStoreName, getStoreName, initStorage, addManualProduct } from '@/lib/storage';
 import { useToast } from '@/components/ToastProvider';
+import { useTheme } from 'next-themes';
 
 export default function AdminPage() {
   const router = useRouter();
   const { showToast } = useToast();
   const [storeName, setStoreNameState] = useState('');
   const [nameInput, setNameInput] = useState('');
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // ── Init ───────────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -64,28 +71,38 @@ export default function AdminPage() {
   };
 
   return (
-    <main className="min-h-dvh max-w-lg mx-auto bg-[#0f172a] text-slate-200 antialiased pb-20">
+    <main className="min-h-dvh max-w-lg mx-auto bg-slate-50 dark:bg-[#0f172a] text-slate-800 dark:text-slate-200 antialiased pb-20">
       {/* ── Header ─────────────────────────────────────────── */}
-      <header className="sticky top-0 z-30 pt-safe bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800/60 px-5 py-4 flex items-center gap-4">
+      <header className="sticky top-0 z-30 pt-safe bg-slate-50/95 dark:bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/60 px-5 py-4 flex items-center gap-4">
         <button
           onClick={() => router.push('/')}
-          className="p-2 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-400 hover:text-white transition-all active:scale-95"
+          className="p-2 rounded-xl bg-slate-200 dark:bg-slate-800/40 border border-slate-300 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all active:scale-95"
         >
           <ArrowLeft size={20} />
         </button>
-        <h1 className="text-lg font-bold text-white flex items-center gap-2">
+        <h1 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <Settings size={20} className="text-[#38bdf8]" />
           Yönetim Paneli
         </h1>
+        <div className="ml-auto">
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-xl bg-slate-200 dark:bg-slate-800/40 border border-slate-300 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all active:scale-95"
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          )}
+        </div>
       </header>
 
       <div className="p-6 space-y-8">
         {/* ── Store Settings ────────────────────────────────────────────── */}
         <section className="space-y-4">
           <h2 className="text-xs font-black text-slate-500 uppercase tracking-widest px-1">Genel Ayarlar</h2>
-          <div className="bg-[#1e293b] border border-[#334155] rounded-3xl p-6 space-y-5">
+          <div className="bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-[#334155] rounded-3xl p-6 space-y-5 shadow-sm dark:shadow-none">
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-medium text-slate-400">
+              <label className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400">
                 <Store size={15} className="text-[#38bdf8]" />
                 Mağaza Adı
               </label>
@@ -95,7 +112,7 @@ export default function AdminPage() {
                   value={nameInput}
                   onChange={(e) => setNameInput(e.target.value)}
                   placeholder="Örn: Gebze Teknosa"
-                  className="flex-1 bg-[#0f172a] border border-[#334155] rounded-2xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-[#38bdf8]/60 text-sm"
+                  className="flex-1 bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] rounded-2xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-[#38bdf8]/60 text-sm"
                 />
                 <button
                   onClick={saveStoreName}
@@ -106,20 +123,20 @@ export default function AdminPage() {
               </div>
             </div>
 
-            <div className="h-px bg-[#334155]/50" />
+            <div className="h-px bg-slate-200 dark:bg-[#334155]/50" />
           </div>
         </section>
 
         {/* ── Add Product Form ────────────────────────────────────────────── */}
         <section className="space-y-4">
           <h2 className="text-xs font-black text-slate-500 uppercase tracking-widest px-1">Yeni Ürün Ekle</h2>
-          <div className="bg-[#1e293b] border border-[#334155] rounded-3xl p-6 space-y-4">
+          <div className="bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-[#334155] rounded-3xl p-6 space-y-4 shadow-sm dark:shadow-none">
             <div className="space-y-1.5">
               <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Model Bilgisi</label>
               <input
                 type="text"
                 placeholder="Model Kodu (Örn: UX8406)"
-                className="w-full bg-[#0f172a] border border-[#334155] rounded-2xl px-4 py-3 text-sm text-white focus:border-[#38bdf8]/50 outline-none"
+                className="w-full bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] rounded-2xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-[#38bdf8]/50 outline-none"
                 id="new-model"
               />
             </div>
@@ -129,7 +146,7 @@ export default function AdminPage() {
               <input
                 type="text"
                 placeholder="Ürün Adı"
-                className="w-full bg-[#0f172a] border border-[#334155] rounded-2xl px-4 py-3 text-sm text-white focus:border-[#38bdf8]/50 outline-none"
+                className="w-full bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] rounded-2xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-[#38bdf8]/50 outline-none"
                 id="new-name"
               />
             </div>
@@ -140,7 +157,7 @@ export default function AdminPage() {
                 <input
                   type="number"
                   placeholder="24.999"
-                  className="w-full bg-[#0f172a] border border-[#334155] rounded-2xl px-4 py-3 text-sm text-white focus:border-[#38bdf8]/50 outline-none"
+                  className="w-full bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] rounded-2xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-[#38bdf8]/50 outline-none"
                   id="new-price"
                 />
               </div>
@@ -169,7 +186,7 @@ export default function AdminPage() {
               <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Özellikler</label>
               <textarea
                 placeholder="Örn: 32GB RAM, 1TB SSD, OLED"
-                className="w-full bg-[#0f172a] border border-[#334155] rounded-2xl px-4 py-3 text-sm text-white focus:border-[#38bdf8]/50 outline-none resize-none"
+                className="w-full bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] rounded-2xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:border-[#38bdf8]/50 outline-none resize-none"
                 rows={3}
                 id="new-features"
               />
@@ -177,7 +194,7 @@ export default function AdminPage() {
 
             <button
               onClick={handleAddProduct}
-              className="w-full flex items-center justify-center gap-2 py-5 bg-[#38bdf8] text-[#0f172a] rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#38bdf8]/90 transition-all active:scale-95 shadow-lg shadow-[#38bdf8]/20"
+              className="w-full flex items-center justify-center gap-2 py-5 bg-[#38bdf8] text-[#0f172a] rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#38bdf8]/90 transition-all active:scale-95 shadow-lg shadow-[#38bdf8]/20 dark:shadow-none"
             >
               <Plus size={20} />
               Ürünü Kaydet

@@ -15,15 +15,15 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-300"
+        className="absolute inset-0 bg-slate-900/40 dark:bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-300"
         onClick={onClose}
       />
       
       {/* Modal Content */}
-      <div className="relative w-full max-w-sm bg-slate-900/90 border border-slate-700/50 rounded-3xl p-8 shadow-2xl animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-sm bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/50 rounded-3xl p-8 shadow-xl dark:shadow-2xl animate-in zoom-in-95 duration-300">
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
         >
           <X size={20} />
         </button>
@@ -33,11 +33,11 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
             <Info size={32} />
           </div>
 
-          <h2 className="text-xl font-black text-white mb-4 tracking-tight">
+          <h2 className="text-xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">
             Önemli Bilgilendirme
           </h2>
 
-          <div className="space-y-4 text-slate-300 text-sm leading-relaxed">
+          <div className="space-y-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
             <div className="flex gap-3 text-left">
               <div className="mt-1 text-blue-400 shrink-0">
                 <Lightbulb size={18} />
@@ -56,7 +56,7 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
               </p>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-slate-800 flex gap-3 text-left opacity-60">
+            <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex gap-3 text-left opacity-60">
               <div className="mt-0.5 text-slate-400 shrink-0">
                 <CheckCircle size={14} />
               </div>
@@ -68,7 +68,7 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
 
           <button
             onClick={onClose}
-            className="mt-8 w-full py-4 rounded-2xl bg-blue-500 text-[#0f172a] font-black uppercase tracking-[0.2em] text-xs hover:bg-blue-400 transition-all active:scale-95 shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            className="mt-8 w-full py-4 rounded-2xl bg-blue-500 text-white dark:text-[#0f172a] font-black uppercase tracking-[0.2em] text-xs hover:bg-blue-400 transition-all active:scale-95 shadow-[0_0_20px_rgba(59,130,246,0.3)]"
           >
             Anladım
           </button>

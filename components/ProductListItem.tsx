@@ -20,15 +20,15 @@ export default function ProductListItem({ product, onClick }: Props) {
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center gap-4 p-3 bg-[#1e293b] border border-[#334155] rounded-2xl active:scale-[0.98] transition-all hover:border-[#38bdf8]/30 group text-left"
+      className="w-full flex items-center gap-4 p-3 bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-[#334155] rounded-2xl active:scale-[0.98] transition-all hover:border-[#38bdf8]/30 dark:hover:border-[#38bdf8]/30 group text-left shadow-sm dark:shadow-none"
     >
       {/* Small Image Thumbnail */}
-      <div className="w-16 h-16 bg-[#172033] rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0">
+      <div className="w-16 h-16 bg-slate-100 dark:bg-[#172033] rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0">
         {image ? (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img src={image} alt={product.name} className="w-full h-full object-contain p-1" />
         ) : (
-          <div className="text-[#334155] opacity-50">
+          <div className="text-slate-400 dark:text-[#334155] opacity-50">
             <Tag size={20} />
           </div>
         )}
@@ -37,7 +37,7 @@ export default function ProductListItem({ product, onClick }: Props) {
       {/* Info Group */}
       <div className="flex-1 min-w-0 flex flex-col justify-center">
         <div className="flex items-center gap-2 mb-0.5">
-          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider truncate">
+          <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
             {product.modelCode}
           </h3>
           {product.spiffActive && (
@@ -46,7 +46,7 @@ export default function ProductListItem({ product, onClick }: Props) {
             </span>
           )}
         </div>
-        <p className="text-sm font-medium text-white/90 leading-tight line-clamp-1">
+        <p className="text-sm font-medium text-slate-900 dark:text-white/90 leading-tight line-clamp-1">
           {product.name}
         </p>
         <div className="flex items-center gap-2 mt-1">

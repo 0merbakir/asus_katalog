@@ -250,7 +250,9 @@
   "overrides": {
     "prices": {},
     "stocks": {},
-    "spiffStates": {},
+    "spiffStates": {
+      "v404-core5-210h": false
+    },
     "deletedIds": []
   }
 }
