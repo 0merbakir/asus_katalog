@@ -1,0 +1,265 @@
+{
+  "products": [
+    {
+      "id": "x1504va-bq3970w",
+      "modelCode": "X1504VA-BQ3970W",
+      "name": "Asus Vivobook 15",
+      "features": "Intel Core 5-120U, 8GB RAM, 512GB SSD, 15.6\" FHD",
+      "price": 23999,
+      "spiff": "0 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/5b880c54-f0f4-4391-82cd-450c66d6a99c/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_02.png"
+      ]
+    },
+    {
+      "id": "x1504va-bq5382w",
+      "modelCode": "X1504VA-BQ5382W",
+      "name": "Asus Vivobook 15",
+      "features": "Intel Core 5-120U, 8GB RAM, 512GB SSD, 15.6\" FHD",
+      "price": 22999,
+      "spiff": "0 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/3bc7a98a-bc86-4314-bea8-cf87e382861f/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_01.png"
+      ]
+    },
+    {
+      "id": "v3607vu-rp061w",
+      "modelCode": "V3607VU-RP061W",
+      "name": "Asus Vivobook 16",
+      "features": "Core 5-210H, 8GB RAM, RTX 4050 6GB, 16\"",
+      "price": 39999,
+      "spiff": "500 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/5b880c54-f0f4-4391-82cd-450c66d6a99c/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_02.png"
+      ]
+    },
+    {
+      "id": "x1607qa-mb052w",
+      "modelCode": "X1607QA-MB052W",
+      "name": "Asus Vivobook 16",
+      "features": "Snapdragon X, 16GB RAM, 512GB SSD, 16\" W11",
+      "price": 36999,
+      "spiff": "500 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/3bc7a98a-bc86-4314-bea8-cf87e382861f/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_01.png"
+      ]
+    },
+    {
+      "id": "s3607qa-sh037w",
+      "modelCode": "S3607QA-SH037W",
+      "name": "Asus Vivobook S16",
+      "features": "Snapdragon X X1, 16GB RAM, 16\" 60Hz OLED",
+      "price": 49999,
+      "spiff": "750 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/3bc7a98a-bc86-4314-bea8-cf87e382861f/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_01.png"
+      ]
+    },
+    {
+      "id": "v404-core5-210h",
+      "modelCode": "V404-CORE5-210H",
+      "name": "Asus Vivobook 14",
+      "features": "Intel Core 5 210H, 16GB RAM, 512GB SSD, 60Hz",
+      "price": 34999,
+      "spiff": "500 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/5b880c54-f0f4-4391-82cd-450c66d6a99c/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_02.png"
+      ]
+    },
+    {
+      "id": "m3407ka-sf074w",
+      "modelCode": "M3407KA-SF074W",
+      "name": "Asus Vivobook S14",
+      "features": "Ryzen AI 7 350, 16GB RAM, 1TB SSD, OLED",
+      "price": 45999,
+      "spiff": "500 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/3bc7a98a-bc86-4314-bea8-cf87e382861f/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_01.png"
+      ]
+    },
+    {
+      "id": "v3607vh-rp035w",
+      "modelCode": "V3607VH-RP035W",
+      "name": "Asus Vivobook 16",
+      "features": "Intel Core 5-210H, 16GB RAM, 512GB SSD, 16\"",
+      "price": 47999,
+      "spiff": "500 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/5b880c54-f0f4-4391-82cd-450c66d6a99c/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_02.png"
+      ]
+    },
+    {
+      "id": "m3407ga-sf013w",
+      "modelCode": "M3407GA-SF013W",
+      "name": "Asus Vivobook S14",
+      "features": "Ryzen AI 7 445, 14\" OLED 60Hz, DDR5",
+      "price": 59999,
+      "spiff": "500 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/3bc7a98a-bc86-4314-bea8-cf87e382861f/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_01.png"
+      ]
+    },
+    {
+      "id": "v16-core5-144hz",
+      "modelCode": "V16-CORE5-144HZ",
+      "name": "Asus Vivobook 16",
+      "features": "Intel Core 5 210H, 16GB, 512GB, 144Hz Refresh",
+      "price": 49999,
+      "spiff": "500 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/5b880c54-f0f4-4391-82cd-450c66d6a99c/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_02.png"
+      ]
+    },
+    {
+      "id": "s5406sa-qd146w",
+      "modelCode": "S5406SA-QD146W",
+      "name": "Asus Vivobook S 14",
+      "features": "Intel Ultra-7, 32GB RAM, 1TB SSD, OLED",
+      "price": 59999,
+      "spiff": "750 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/3bc7a98a-bc86-4314-bea8-cf87e382861f/ASUS%20Vivobook%20S%2014_S5406SA_Product%20photo_01.png"
+      ]
+    },
+    {
+      "id": "g615jh-rv052",
+      "modelCode": "G615JH-RV052",
+      "name": "Asus ROG Strix G16",
+      "features": "i5 13450HX, 16GB, 512GB, RTX 5050, 165Hz",
+      "price": 59999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/8305685f-526d-4454-9407-99eb0a95b8d8/02_2024%20Strix%20G16_%20Shot%20of%20the%20Strix%20G16%20with%20the%20with%20the%20lid%20open,%20with%20the%20ROG%20Fearless%20Eye%20logo%20on%20screen.png"
+      ]
+    },
+    {
+      "id": "um5606wa-rk295w",
+      "modelCode": "UM5606WA-RK295W",
+      "name": "Asus Zenbook S 16",
+      "features": "AMD Ryzen AI 9 HX370, 32GB RAM, 1TB SSD, 3K OLED",
+      "price": 74999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/30868877-89d9-4f4b-bb0a-d582f56f8bba/ASUS%20Zenbook%20S%2016%20UM5606%20Scandinavian%20White%20PR%202.png"
+      ]
+    },
+    {
+      "id": "ux8406ca-pz062w",
+      "modelCode": "UX8406CA-PZ062W",
+      "name": "Asus Zenbook Duo",
+      "features": "Ultra 7-255H, 32GB RAM, 1TB SSD, Dual Screen",
+      "price": 77999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/798ab5b5-8a0a-43e7-8325-ac7608bfb84f/Zenbook%20Duo%20(2024)_Laptop%20mode.png"
+      ]
+    },
+    {
+      "id": "ux5406sa-pz510w",
+      "modelCode": "UX5406SA-PZ510W",
+      "name": "Asus Zenbook S 14",
+      "features": "Intel Ultra 7, 3K OLED 120Hz, 14.0\"",
+      "price": 79999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/ce6328bc-1405-4c8f-93b9-aa676f151127/ASUS%20Zenbook%20S%2016%20UM5606%20Scandinavian%20White%20PR%201.png"
+      ]
+    },
+    {
+      "id": "strix-16-r9-8940hx",
+      "modelCode": "STRIX-16-R9-8940HX",
+      "name": "Rog Strix 16",
+      "features": "R9-8940HX, 16GB, 1TB SSD, 8GB GPU, 165Hz",
+      "price": 89999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/8305685f-526d-4454-9407-99eb0a95b8d8/02_2024%20Strix%20G16_%20Shot%20of%20the%20Strix%20G16%20with%20the%20with%20the%20lid%20open,%20with%20the%20ROG%20Fearless%20Eye%20logo%20on%20screen.png"
+      ]
+    },
+    {
+      "id": "tuf-i7-14650hx",
+      "modelCode": "TUF-I7-14650HX",
+      "name": "Asus TUF Gaming",
+      "features": "i7-14650HX, 16GB RAM, 1TB SSD, RTX 5060 8GB",
+      "price": 81999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/937c6aae-24db-465e-8899-8c5576ab78c4/11_2024%20ROG%20Strix%20G18%20Volt%20Green_Rear%20view%20of%20the%20Strix%20G18,%20with%20the%20lid%20partially%20opened%20and%20full-surround%20vents%20lighted%20up.png"
+      ]
+    },
+    {
+      "id": "intel-core7-240h-rtx5070",
+      "modelCode": "CORE7-240H-RTX5070",
+      "name": "Asus Creator Laptop",
+      "features": "Intel Core 7 240H, 16GB RAM, RTX 5070, 16.0\"",
+      "price": 89999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/986add8a-921f-44f1-93e2-c9b4e11a37a5/ProArt%20P16_H7606_scenario%20photo_4.jpg"
+      ]
+    },
+    {
+      "id": "um5606ga-ss308w",
+      "modelCode": "UM5606GA-SS308W",
+      "name": "Asus Zenbook S 16",
+      "features": "AMD Ryzen AI 9 465, 3K OLED 120Hz, 16.0\"",
+      "price": 99999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/ce6328bc-1405-4c8f-93b9-aa676f151127/ASUS%20Zenbook%20S%2016%20UM5606%20Scandinavian%20White%20PR%201.png"
+      ]
+    },
+    {
+      "id": "ux8406ca-pz133w",
+      "modelCode": "UX8406CA-PZ133W",
+      "name": "Asus Zenbook Duo",
+      "features": "Ultra 9-285H, 32GB RAM, 2TB SSD, Dual Screen",
+      "price": 117999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/798ab5b5-8a0a-43e7-8325-ac7608bfb84f/Zenbook%20Duo%20(2024)_Laptop%20mode.png"
+      ]
+    },
+    {
+      "id": "h7606wp-rj088w",
+      "modelCode": "H7606WP-RJ088W",
+      "name": "Asus ProArt P16",
+      "features": "Ryzen AI 9 HX370, 64GB RAM, 2TB SSD, RTX 5070",
+      "price": 134999,
+      "spiff": "1.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/986add8a-921f-44f1-93e2-c9b4e11a37a5/ProArt%20P16_H7606_scenario%20photo_4.jpg"
+      ]
+    },
+    {
+      "id": "hn7306eac-lx099w",
+      "modelCode": "HN7306EAC-LX099W",
+      "name": "Asus ProArt PX13",
+      "features": "AMD Ryzen AI Max+ 395, 3K OLED, 60Hz",
+      "price": 199999,
+      "spiff": "2.000 TL",
+      "imageUrls": [
+        "https://press.asus.com/assets/w_640,h_640/848f12ac-ad66-47d4-a28a-71c8834c894b/ProArt%20PX13_HN7306_Product%20photo_Nano%20Black_03_2400x2400.png"
+      ]
+    }
+  ],
+  "manualProducts": [],
+  "settings": {
+    "storeName": "Gebze Teknosa"
+  },
+  "overrides": {
+    "prices": {},
+    "stocks": {
+      "x1504va-bq5382w": 11,
+      "x1504va-bq3970w": 6
+    },
+    "spiffStates": {
+      "x1504va-bq5382w": true,
+      "v404-core5-210h": false,
+      "x1504va-bq3970w": true,
+      "x1607qa-mb052w": false,
+      "hn7306eac-lx099w": false
+    },
+    "deletedIds": []
+  }
+}
