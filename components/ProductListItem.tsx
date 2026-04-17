@@ -42,7 +42,7 @@ export default function ProductListItem({ product, onClick }: Props) {
           </h3>
           {product.spiffActive && (
             <span className="px-1.5 py-0.5 rounded-full bg-[#c084fc]/20 border border-[#c084fc]/30 text-[#c084fc] text-[8px] font-black uppercase tracking-widest">
-              {product.spiff && product.spiff !== '0 TL' ? product.spiff : 'SPIFF'}
+              SPIFF
             </span>
           )}
         </div>
