@@ -249,16 +249,18 @@
   },
   "overrides": {
     "prices": {},
-    "stocks": {},
+    "stocks": {
+      "x1504va-bq3970w": 2
+    },
     "spiffStates": {
-      "x1504va-bq5382w": true,
+      "x1504va-bq5382w": false,
       "v3607vu-rp061w": true,
       "m3407ka-sf074w": true,
       "v3607vh-rp035w": true,
       "strix-16-r9-8940hx": true,
       "h7606wp-rj088w": true,
       "hn7306eac-lx099w": true,
-      "x1504va-bq3970w": true,
+      "x1504va-bq3970w": false,
       "um5606ga-ss308w": true
     },
     "deletedIds": []
