@@ -89,7 +89,7 @@ export default function AdminPage() {
                 <Store size={15} className="text-[#38bdf8]" />
                 Mağaza Adı
               </label>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="text"
                   value={nameInput}
@@ -99,7 +99,7 @@ export default function AdminPage() {
                 />
                 <button
                   onClick={saveStoreName}
-                  className="px-6 py-3 rounded-2xl bg-[#38bdf8] text-[#0f172a] text-sm font-black uppercase tracking-wider hover:bg-[#38bdf8]/90 transition-colors active:scale-95"
+                  className="w-full sm:w-auto shrink-0 px-8 py-3 rounded-2xl bg-[#38bdf8] text-[#0f172a] text-sm font-black uppercase tracking-wider hover:bg-[#38bdf8]/90 transition-colors active:scale-95"
                 >
                   Kaydet
                 </button>
