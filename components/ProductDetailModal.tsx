@@ -107,7 +107,7 @@ export default function ProductDetailModal({ product, storeName, isOpen, onClose
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-slate-800 text-slate-400 active:scale-90 transition-transform"
+              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 active:scale-90 transition-transform"
             >
               <X size={20} />
             </button>
