@@ -35,38 +35,94 @@ let cache: AppState | null = null;
 
 async function fetchState(): Promise<AppState> {
   const ts = Date.now();
-  const res = await fetch(`/api/storage?t=${ts}`, { cache: 'no-store' });
-  const data = await res.json();
+  let serverData: AppState | null = null;
   
-  if (!data.overrides) {
-    data.overrides = { prices: {}, stocks: {}, spiffStates: {}, deletedIds: [] };
-  } else {
-    if (!data.overrides.prices) data.overrides.prices = {};
-    if (!data.overrides.stocks) data.overrides.stocks = {};
-    if (!data.overrides.spiffStates) data.overrides.spiffStates = {};
-    if (!data.overrides.deletedIds) data.overrides.deletedIds = [];
+  try {
+    const res = await fetch(`/api/storage?t=${ts}`, { cache: 'no-store' });
+    if (res.ok) {
+      serverData = await res.json();
+    }
+  } catch (err) {
+    console.warn('Network or Server cache fetch failed:', err);
   }
+
+  // Define defaults
+  const data: AppState = serverData || {
+    products: [],
+    manualProducts: [],
+    settings: { storeName: 'Gebze Teknosa' },
+    overrides: { prices: {}, stocks: {}, spiffStates: {}, deletedIds: [] }
+  };
+
+  if (!data.overrides) data.overrides = { prices: {}, stocks: {}, spiffStates: {}, deletedIds: [] };
+  if (!data.overrides.prices) data.overrides.prices = {};
+  if (!data.overrides.stocks) data.overrides.stocks = {};
+  if (!data.overrides.spiffStates) data.overrides.spiffStates = {};
+  if (!data.overrides.deletedIds) data.overrides.deletedIds = [];
   if (!data.manualProducts) data.manualProducts = [];
   if (!data.settings) data.settings = { storeName: 'Gebze Teknosa' };
+
+  // LOCAL STORAGE FALLBACK LOGIC
+  // We overlay local storage on top of server data if it exists, to ensure 0 data loss
+  if (typeof window !== 'undefined') {
+    try {
+      const localString = localStorage.getItem('tekapp_database_sync');
+      if (localString) {
+        const localData = JSON.parse(localString) as AppState;
+        if (localData && localData.overrides) {
+          // Merge overrides (Local has higher priority to prevent loss on reload)
+          data.overrides.prices = { ...data.overrides.prices, ...localData.overrides.prices };
+          data.overrides.stocks = { ...data.overrides.stocks, ...localData.overrides.stocks };
+          data.overrides.spiffStates = { ...data.overrides.spiffStates, ...localData.overrides.spiffStates };
+          
+          const combinedDeletes = new Set([...data.overrides.deletedIds, ...(localData.overrides.deletedIds || [])]);
+          data.overrides.deletedIds = Array.from(combinedDeletes);
+
+          // Merge manual products based on unique ID
+          const manualMap = new Map<string, Product>();
+          data.manualProducts.forEach(p => manualMap.set(p.id, p));
+          if (localData.manualProducts) {
+            localData.manualProducts.forEach(p => manualMap.set(p.id, p));
+          }
+          data.manualProducts = Array.from(manualMap.values());
+        }
+      }
+    } catch (e) {
+      console.warn('LocalStorage parse failed:', e);
+    }
+  }
 
   return data;
 }
 
+// Global debounced save to prevent excessive JSON file overwrites
+let saveTimeout: NodeJS.Timeout | null = null;
+
 async function saveState(state: AppState) {
-  try {
-    const res = await fetch('/api/storage', {
-      method: 'POST',
-      cache: 'no-store',
-      keepalive: true,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(state),
-    });
-    if (!res.ok) {
-      console.error('SAVE_STATE_ERR: Server returned', res.status);
-    }
-  } catch (err) {
-    console.error('SAVE_STATE_ERR_NETWORK:', err);
+  // 1. Immediately save to localStorage for fail-safe persistence
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('tekapp_database_sync', JSON.stringify(state));
   }
+
+  // 2. Debounced save to Server JSON file (public/products.json)
+  if (saveTimeout) clearTimeout(saveTimeout);
+  
+  saveTimeout = setTimeout(async () => {
+    try {
+      const res = await fetch('/api/storage', {
+        method: 'POST',
+        cache: 'no-store',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(state),
+      });
+      if (!res.ok) {
+        console.error('SAVE_STATE_ERR: Server returned', res.status);
+      }
+    } catch (err) {
+      console.error('SAVE_STATE_ERR_NETWORK:', err);
+    }
+  }, 100); // 100ms debounce
 }
 
 export async function initStorage(): Promise<AppState> {
